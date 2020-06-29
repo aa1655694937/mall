@@ -36,7 +36,7 @@ export default {
 
 <style lang="scss" scoped>
 .footer {
-  position: absolute;
+  position: fixed;
   left: 0;
   bottom: 0;
   right: 0;
@@ -44,7 +44,8 @@ export default {
   display: flex;
   border-top: 1px solid #999;
   // width: 375px;
-
+  background: white;
+  // padding-bottom: -44px;
   .F_routers {
     text-decoration: none;
     flex: 1;

@@ -1,24 +1,27 @@
 <!--  -->
 <template>
-<div class=''>
-     <headerCom title="分类" />
-    <ul>
-        <li></li>
-    </ul>
-    <footerCom />
-</div>
+<div class='goods'>
+    <goodsItem v-for="(item,key) in goods" :key="key" :goodsItem="item" />
+</div> 
 </template>
 
 <script>
 //这里可以导入其他文件（比如：组件，工具js，第三方插件js，json文件，图片文件等等）
 //例如：import 《组件名称》 from '《组件路径》';
-import headerCom from '@/components/headercom'
-import footerCom from '@/components/footercom'
+import goodsItem from './goodsItem'
 export default {
 //import引入的组件需要注入到对象中才能使用
-components: {   
-     footerCom,
-    headerCom},
+components: {
+    goodsItem
+},
+props:{
+    goods:{
+        type: Array,
+        default(){
+            return []
+        }
+    }
+},
 data() {
 //这里存放数据
 return {
@@ -26,7 +29,9 @@ return {
 };
 },
 //监听属性 类似于data概念
-computed: {},
+computed: {
+//  goodsItem
+},
 //监控data中的数据变化
 watch: {},
 //方法集合
@@ -52,5 +57,11 @@ activated() {}, //如果页面有keep-alive缓存功能，这个函数会触发
 </script>
 <style lang='scss' scoped>
 //@import url(); 引入公共css类
-
+ .goods{
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: space-around;
+    //  padding: 2px;
+    margin: 2px;
+ }
 </style>

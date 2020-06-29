@@ -1,0 +1,71 @@
+@import "~assets/css/normalize.css";
+
+/* :root 获取根元素，html */
+
+:root {
+  --color-text: #666;
+  --color-high-text: #ff5777;
+  /* 通常指图片背景颜色 */
+  --color-tint: #ff8198;
+  --color-background: #fff;
+  --font-size: 14px;
+  --line-height: 1.5;
+}
+
+
+/* ：：代表伪元素，这里代表的是任意元素前后 */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  /* 使限定的框不会因为padding而影响框的宽高 */
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  user-select: none;
+  /* 禁止用户鼠标在页面上选中文字/图片等 */
+  -webkit-tap-highlight-color: transparent;
+  /* webkit是苹果浏览器引擎，点击高亮颜色设置为透明 */
+  color: var(--color-text);
+  /* 
+    vw：视窗宽度的百分比（1vw 代表视窗的宽度为 1%）
+    vh：视窗高度的百分比
+    vmin：当前 vw 和 vh 中较小的一个值
+    vmax：当前 vw 和 vh 中较大的一个值
+  */
+  width: 100vw;
+}
+
+a {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.clear-fix::after {
+  clear: both;
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+
+.clear-fix {
+  zoom: 1;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+[v-cloak]{
+  display: none;
+}

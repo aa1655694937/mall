@@ -6,6 +6,7 @@ import Home from '../pages/home'
 import Cate from '../pages/cate'
 import Cart from '../pages/cart'
 import My from '../pages/my'
+const Detail = () =>import('../pages/detail')
 
 const routes = [
   { path:'/',redirect: '/home' },
@@ -25,6 +26,10 @@ const routes = [
   {
     path:"/my",
     component: My
+  },
+   {
+    path:"/detail/:iid",
+    component: Detail
   },
 ]
 

@@ -1,28 +1,32 @@
 <!--  -->
 <template>
-<div class=''>
-     <headerCom title="分类" />
-    <ul>
-        <li></li>
-    </ul>
-    <footerCom />
+<div class='toast' v-show="show">
+	{{message}}
 </div>
 </template>
 
 <script>
 //这里可以导入其他文件（比如：组件，工具js，第三方插件js，json文件，图片文件等等）
 //例如：import 《组件名称》 from '《组件路径》';
-import headerCom from '@/components/headercom'
-import footerCom from '@/components/footercom'
+
 export default {
 //import引入的组件需要注入到对象中才能使用
-components: {   
-     footerCom,
-    headerCom},
+components: {},
+props:{
+	message:{
+		type: String,
+		default:''
+	},
+	show:{
+		type: Boolean,
+		default: false
+	}
+},
 data() {
 //这里存放数据
 return {
-
+message:'',
+isShow: false
 };
 },
 //监听属性 类似于data概念
@@ -31,7 +35,16 @@ computed: {},
 watch: {},
 //方法集合
 methods: {
-
+	// show(message,duration){
+		// console.log('------')
+	// 	this.isShow = true;
+	// 	this.message = message
+		
+	// 	setTimeout(() => {
+	// 		this.isShow = false;
+	// 		this.message = ''
+	// 	},duration)
+	// }
 },
 //生命周期 - 创建完成（可以访问当前this实例）
 created() {
@@ -52,5 +65,14 @@ activated() {}, //如果页面有keep-alive缓存功能，这个函数会触发
 </script>
 <style lang='scss' scoped>
 //@import url(); 引入公共css类
-
+.toast{
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	padding: 8px 10px;
+	z-index: 99999;
+	transform: translate(-50%, -50%);
+	background: rgba(0,0,0,.6);
+	color: white;
+}
 </style>

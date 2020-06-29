@@ -1,24 +1,19 @@
 <!--  -->
 <template>
-<div class=''>
-     <headerCom title="分类" />
-    <ul>
-        <li></li>
-    </ul>
-    <footerCom />
+<div class='Feature'>
+    <a href="https://act.mogujie.com/zzlx67">
+        <img src="@/assets/img/home/recommend_bg.jpg" alt="">
+    </a>
 </div>
 </template>
 
 <script>
 //这里可以导入其他文件（比如：组件，工具js，第三方插件js，json文件，图片文件等等）
 //例如：import 《组件名称》 from '《组件路径》';
-import headerCom from '@/components/headercom'
-import footerCom from '@/components/footercom'
+
 export default {
 //import引入的组件需要注入到对象中才能使用
-components: {   
-     footerCom,
-    headerCom},
+components: {},
 data() {
 //这里存放数据
 return {
@@ -52,5 +47,9 @@ activated() {}, //如果页面有keep-alive缓存功能，这个函数会触发
 </script>
 <style lang='scss' scoped>
 //@import url(); 引入公共css类
-
+.Feature img{
+    width: 100%;
+    /*height: 188px;*/
+    /*height: 110%;*/
+}
 </style>

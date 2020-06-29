@@ -37,24 +37,25 @@ export default {
 .hd {
     position: relative;
     z-index: 10;
-
+    background: #fff;
     display: flex;
-
+    width: 100%;
     height: 44px;
     line-height: 44px;
     text-align: center;
-    // border-bottom: 1px solid black;
+     // border-bottom: 1px solid black;
     
     .hd-left{
          width: 60px;
+         /*border: 1px solid darkblue;*/
     }
     .hd-center{
         flex: 1;
         // text-align: center;
     }
-    .hd-right{
+    .right{
         width: 60px;
-        // border: 1px solid darkblue;
+        /*border: 1px solid darkblue;*/
     }
 
     } 
